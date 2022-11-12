@@ -1,0 +1,11 @@
+name: publish 
+on: [push]
+jobs:
+  publish-resbaz2022-image:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2 
+    - name: Build docker image
+      run: echo $CR_PAT | docker login ghcr.io -u eirianop --password-stdin
+      env:
+        CR_PAT: ${{ secrets.CR_PAT }}
