@@ -30,4 +30,4 @@ jobs:
           tags: |
             user/app:latest
             user/app:1.0.0
-            ghcr.io/eirianop/resbazNotebook2022:latest
+            ghcr.io/eirianop/dockerresbaz2022:latest
