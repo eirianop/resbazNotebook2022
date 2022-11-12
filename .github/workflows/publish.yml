@@ -7,8 +7,6 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v3
-        with:
-          clean: false
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2

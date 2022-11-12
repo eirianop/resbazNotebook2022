@@ -15,8 +15,9 @@ RUN apt -y install sagetex
 RUN apt -y install bsdmainutils
 RUN apt -y install rsync
 
-COPY notebook2022-tools /tools
-RUN dpkg -i /tools/*deb
+#COPY notebook2022-tools /tools
+RUN wget https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb
+RUN dpkg -i pandoc-2.19.2-1-amd64.deb
 
 WORKDIR /results
 ENTRYPOINT ["/usr/bin/make"]
