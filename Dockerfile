@@ -24,7 +24,7 @@ RUN apt -y install bsdmainutils
 RUN apt -y install rsync
 
 #COPY notebook2022-tools /tools
-RUN dpkg -i /tools/*deb
+#RUN dpkg -i /tools/*deb
 
 WORKDIR /results
 ENTRYPOINT ["/usr/bin/make"]
