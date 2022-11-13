@@ -1,9 +1,8 @@
 FROM debian:buster
 
 RUN apt -y update
-RUN apt -y install curl
-RUN curl -sLO https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb && sudo dpkg -i pandoc-2.19.2-1-amd64.deb
-
+RUN apt -y install wget
+RUN TEMP_DEB="$(mktemp)" && wget -O "$TEMP_DEB" 'https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb' && dpkg -i "$TEMP_DEB"
 
 #RUN python3 -m pip install --upgrade pip
 RUN apt -y install vim 
