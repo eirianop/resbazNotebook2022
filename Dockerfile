@@ -1,7 +1,7 @@
 FROM debian:buster
 
 RUN apt -y update
-#RUN apt -y install wget
+RUN apt -y install dpkg
 
 COPY *deb .
 RUN dpkg -i *deb
