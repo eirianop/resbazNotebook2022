@@ -3,8 +3,11 @@ FROM debian:buster
 RUN apt -y update
 RUN apt -y install dpkg
 
-COPY *deb .
-RUN dpkg -i *deb
+COPY *tar.gz .
+RUN gunzip *gz
+RUN tar xf *tar
+RUN mv */bin/pandoc /bin
+#RUN dpkg -i *deb
 #RUN wget -O . 'https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb' 
 #RUN dpkg -i "pandoc-2.19.2-1-amd64.deb"
 #RUN TEMP_DEB="$(mktemp)" wget -O "$TEMP_DEB" 'https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb' && dpkg -i "$TEMP_DEB"
