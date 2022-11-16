@@ -25,6 +25,7 @@ RUN apt -y install python-sagetex
 RUN apt -y install sagetex
 RUN apt -y install bsdmainutils
 RUN apt -y install rsync
+RUN apt -y install pandoc-citeproc
 
 #COPY notebook2022-tools /tools
 #RUN dpkg -i /tools/*deb
