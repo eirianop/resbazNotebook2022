@@ -13,6 +13,7 @@ RUN mv */bin/pandoc /bin
 #RUN TEMP_DEB="$(mktemp)" wget -O "$TEMP_DEB" 'https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb' && dpkg -i "$TEMP_DEB"
 
 #RUN python3 -m pip install --upgrade pip
+RUN apt -y install pandoc-citeproc
 RUN apt -y install vim 
 RUN apt -y install make
 RUN apt -y install texlive-full
