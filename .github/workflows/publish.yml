@@ -30,5 +30,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/eirianop/dockerresbaz2022:latest
-            ghcr.io/eirianop/dockerresbaz2022:1.0.1
+            ghcr.io/eirianop/dockerresbaz2022:1.0.2
