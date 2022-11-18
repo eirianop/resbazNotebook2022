@@ -4,6 +4,7 @@ RUN apt -y update
 RUN apt -y install dpkg
 
 RUN apt -y install haskell-platform
+RUN cabal update
 RUN cabal install cabal-install
 RUN gunzip pandoc-2.18.tar.gz
 RUN tar xf pandoc-2.18.tar
