@@ -1,20 +1,13 @@
 FROM debian:buster
 
 RUN apt -y update
-RUN apt -y install dpkg
 
-RUN apt -y install haskell-platform
-RUN cabal update
-RUN cabal install cabal-install
-RUN gunzip pandoc-2.18.tar.gz
-RUN tar xf pandoc-2.18.tar
-RUN cd pandoc-2.18 && cabal install
+COPY *tar.gz .
+RUN gunzip *gz
+RUN tar xf *tar
+RUN mv */bin/pandoc /bin
 
-#COPY *tar.gz .
-#RUN gunzip *gz
-#RUN tar xf *tar
-#RUN mv */bin/pandoc /bin
-# v 2.18 appears to actually be v 2.2 :(
+#RUN apt -y install dpkg
 
 #RUN dpkg -i *deb
 #RUN wget -O . 'https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb' 
